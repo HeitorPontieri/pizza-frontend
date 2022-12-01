@@ -1,0 +1,132 @@
+footer{
+    background-color: #400101;
+}
+
+.numbers-container{
+    display: flex;
+    gap: 20px;
+    width: 55%;
+}
+
+.duvidas-container{
+    padding-top: 70px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 116px;
+    
+}
+.message{
+    min-height: 190px;
+    width: 55%;
+    
+}
+
+.duvidas-container input{
+    width: 55%;
+    height: 62px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.duvidas-container select{
+    
+    width: 55%;
+    height: 62px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*********************************************************/
+
+.container-endereco-mail{
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.infos-gerais{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+}
+.infos-container{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+}
+.infos-gerais p {
+    font-family: 'Libre Baskerville', serif;
+    color: #fff;
+}
+
+.icon-infos{
+
+    font-size: 2rem;    
+    color: #fff;
+
+}
+.redes-sociais{
+
+    display: flex;
+    gap: 20px;
+
+}
+.geral{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 55%;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border: solid 2px #fff;
+}
+
+@media(max-width: 790px){
+
+    .infos-gerais p{
+
+        font-size: 1rem;
+
+    }
+    .fa-location-dot{
+
+        display: none;
+
+    }
+    .location{
+
+        padding-bottom: 100px;
+
+    }
+    .infos-gerais{
+
+        display: flex;
+        flex-direction: column;
+
+    }
+    .envelope{
+
+        display: none;
+
+    }
+    .duvidas-container{
+
+        padding-bottom: 10px;
+
+    }
+    .copyright{
+
+        padding-bottom: 50px;
+
+    }
+
+}
