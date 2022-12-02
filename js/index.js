@@ -1,37 +1,96 @@
 'use strict'
 
-import { getAllbuttons } from "./api";
+// import { getAllbuttons } from "./api";
 
-const createCard = (dados) => {
+const dadosJSON = 
+[
+    {
+        nome: 'Favoritos',
+        imagem: '../img/favorito.png'
+    },
+    {
+        nome: 'Serviços',
+        imagem: '../img/img_serviços.png'
+    }
+]
 
-    const div = document.getElementById('botoes')
-    const a = document.createElement("a")
+const createButton = (dados) => {
+
+    
     const button = document.createElement("button")
-    const img = document.createElement("img")
+    button.classList.add('button')
+    
     const p = document.createElement("p")
-
-    button.
-
     p.textContent = dados.nome
 
+    const a = document.createElement("a")
     a.href = `#${p.textContent}`
-    div.appendChild(button)
-    div.appendChild(img)
-    div.appendChild(p)
 
-    img.classList.add('pizza_favoritos')
-    img.src = dados.img
+    const img = document.createElement("img")
+    img.src = dados.imagem
+    
+    a.appendChild(p)
+    a.appendChild(img)
+    button.appendChild(a)
+    
+    return button
+}
 
+const loadButton = () => {
+    
+    const dados = dadosJSON
+    const container = document.getElementById('botoes')
 
-
-
-
-
-
-    a.appendChild(div)
-
+    const creationCards = dados.map(createButton)
+    container.replaceChildren(...creationCards)
 
 }
+
+console.log(loadButton())
+
+
+const createSection = (dados) => {
+
+    const div = document.createElement("div")
+    const linhaL = document.createElement("div")
+    const linhaR = document.createElement("div")
+    const section = document.createElement("section")
+    const h2 = document.createElement("h2")
+    
+    h2.textContent = dados.nome
+    h2.classList.add("titulo")
+
+    div.classList.add("titulo-container")
+
+    linhaL.classList.add("linha")
+    linhaR.classList.add("linha")
+
+    section.id = dados.nome
+
+    div.appendChild(linhaL)
+    div.appendChild(h2)
+    div.appendChild(linhaR)
+
+    section.appendChild(div)
+
+    return section
+
+}
+const loadSection = () => {
+
+    const dados = dadosJSON
+    const container = document.getElementById('sections')
+
+    const creationSection = dados.map(createSection)
+    container.replaceChildren(...creationSection)
+
+}
+
+loadButton()
+
+loadSection()
+
+
 
 
 

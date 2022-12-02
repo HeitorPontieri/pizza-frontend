@@ -3,10 +3,21 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
 
+    scroll-behavior: smooth;
+
+}
 body {
 
     background-color: #F2CDA0;
+
+}
+a{
+
+    text-decoration: none;
+    color: #fff;
+
 
 }
 
@@ -19,6 +30,11 @@ h2{
     font-family: 'Libre Baskerville', serif;
     color: #400101;
     font-weight: 100;
+
+}
+p{
+ 
+    font-family: 'Libre Baskerville', serif;
 
 }
 input{

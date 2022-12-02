@@ -23,3 +23,11 @@ section{
     gap: 10px;
 
 }
+.card{
+    
+
+    height: 50px;
+    width: 50px;
+    background: rgba(242, 176, 119, 0.53);
+
+}
