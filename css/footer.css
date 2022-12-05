@@ -7,10 +7,12 @@ footer{
     gap: 20px;
     width: 55%;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
 .duvidas-container{
     padding-top: 70px;
     display: flex;
@@ -91,6 +93,17 @@ input::-webkit-inner-spin-button {
     height: 48px;
     width: 48px;
     border: solid 2px #fff;
+}
+
+/********************************************/
+
+.buttonFooter{
+
+    width: 30%;
+    height: 50px;
+    font-size: 1.5rem;
+    color: #fff;
+
 }
 
 @media(max-width: 790px){

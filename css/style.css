@@ -35,6 +35,9 @@ h2{
 p{
  
     font-family: 'Libre Baskerville', serif;
+    display: flex;
+    align-items: center;
+    
 
 }
 input{
@@ -59,5 +62,29 @@ textarea{
     font-size: 1.25rem;
     border: none;
     resize: none;
+
+}
+h3{
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: #400101;
+
+}
+.nome{
+    color: #400101;
+}
+.preco{
+
+    color: #278C3F;
+    font-family: 'Roboto',  sans-serif;
+    font-size: 2rem;
+ 
+
+}
+ul li{
+
+    list-style: none;
 
 }

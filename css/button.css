@@ -1,22 +1,4 @@
 
-.button{
-
-    background-color: #8C2730;
-    border: 3px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    width: 45%;
-    height: 300px;
-    color: #F2F2F2;
-    font-family: 'Libre Baskerville';
-    font-size: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    
-}
 .pizza_favoritos{
 
     transform: rotate(-50deg);
@@ -32,4 +14,52 @@
     gap: 50px;
     padding-bottom: 50px;
 
+}
+
+.img-button{
+
+    display: flex;
+    align-items: center;
+    height: 60%;
+    width: 35%;
+    margin-top: 10px;
+
+}
+
+.button{   
+    background-color: #8C2730;
+    border: 3px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    font-family: 'Libre Baskerville';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.buttonMain{
+
+    font-size: 3rem;
+    width: 45%;
+    height: 300px;
+
+}
+
+.p-button{
+
+    margin-top: 20px;
+
+}
+
+@media (max-width: 750px) {
+
+    .img-button{
+
+        height: 50%;
+        width: 50%;
+    
+    }
+    
+    
 }

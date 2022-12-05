@@ -10,11 +10,12 @@ section{
     background-color: #400101;
 
 }
-.titulo{
+.titulo {
 
     font-size: 4rem;
 
 }
+
 .titulo-container{
 
     display: flex;
@@ -23,11 +24,4 @@ section{
     gap: 10px;
 
 }
-.card{
-    
 
-    height: 50px;
-    width: 50px;
-    background: rgba(242, 176, 119, 0.53);
-
-}

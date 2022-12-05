@@ -10,9 +10,26 @@ const getAllbuttons = async () =>{
     
     return buttons
 }
+const postForms = async (forms) =>{
+
+    const url = {}
+
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(forms),
+        headers: {
+            'content-type': 'application/json',
+        },
+    };
+
+    await fetch(url, options);
+
+
+}
 
 export {
 
-    getAllbuttons
+    getAllbuttons,
+    postForms
 
 }

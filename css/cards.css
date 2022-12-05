@@ -1,0 +1,57 @@
+.container-cards{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    gap: 30px;
+
+}
+
+.infos-img{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.card{
+    height: 200px;
+    width: 50%;
+    background: #F2B077;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+li {
+
+    display: flex;
+
+}
+.nome{
+
+    font-size: 2rem;
+
+}
+.img-card{
+
+    width: 30%;
+    height: 80%;
+    margin-left: 40px;
+
+}
+.promocaoOn{
+
+    display: flex;
+    align-self: flex-end;
+    height: 50%;
+    transform: rotate(-15deg);
+
+}
+.promocaoOff{
+
+    display: none;
+
+}
