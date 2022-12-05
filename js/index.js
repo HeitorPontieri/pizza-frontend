@@ -25,6 +25,7 @@ const dadosBotoes =
         imagem: '../img/img_serviços.png'
     }
 ]
+
 const Pizzas= 
 [
     {
@@ -87,7 +88,7 @@ const createButton = (dados) => {
 }
 const loadButton = () => {
     
-    const dados = dadosBotoes
+    const dados = dadosBotoes //await getAllbuttons()
     const container = document.getElementById('botoes')
 
     const creationCards = dados.map(createButton)
@@ -172,14 +173,17 @@ const createCard = (dados) => {
     img.classList.add('img-card')
 
     const Promocao = document.createElement("img")
-    Promocao.src = "../img/promocao.png"
     if (dados.status_promocao == 0) {
         
+                
+        Promocao.src = "./img/FundoTransparente.png"
         Promocao.classList.add("promocaoOff")
         Promocao.classList.remove("promocaoOn")
-
+        
     }else {
-
+        
+        
+        Promocao.src = "./img/promocao.png"
         Promocao.classList.add("promocaoOn")
         Promocao.classList.remove("promocaoOff")
 

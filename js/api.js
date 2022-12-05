@@ -12,7 +12,7 @@ const getAllbuttons = async () =>{
 }
 const postForms = async (forms) =>{
 
-    const url = {}
+    const url = 'http://localhost:8080/v1/form'
 
     const options = {
         method: 'POST',
