@@ -17,7 +17,7 @@ const getLogin = (dados) => {
 
         if (dados.nome == nome && dados.senha == senha) {
             
-            window.location.href = './src/administracao.html'
+            window.location.href = './pages/administracao.html'
 
         }
     }
