@@ -1,0 +1,23 @@
+main{
+
+    height: 100vh;
+
+}
+h2{
+
+    color: #8C2730;
+    font-size: 3rem;
+    margin-top: 15px;
+    text-align: center;
+
+}
+#Favoritos{
+
+    display: none;
+
+}
+#Serviços{
+
+    display: none;
+
+}

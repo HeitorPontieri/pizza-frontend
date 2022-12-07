@@ -60,20 +60,31 @@ form input{
     color: #fff;
 
 }
-h2 a{
-
-    color: #8C2730;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 2.5rem;
-
-}
-
 .login-container{
 
     display: flex;
     flex-direction: column;
     gap: 40px;
 
+}
+
+@media(max-width:1880px){
+    
+    main{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .pizza{
+
+        display:none;
+        
+    }
+    .fatia{
+
+        display:none;
+
+    }
 }

@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="url=http://127.0.0.1:5500/admin/index.html" id="meta">
     <link rel="shortcut icon" href="../../img/pizza_logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Ubuntu:wght@300;400&display=swap"rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500&display=swap"rel="stylesheet">
     <script src="https://kit.fontawesome.com/bd40ade05d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <script src="../js/login.js" defer type="module"></script>
-    <title>novo Usuário</title>
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/button.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="../js/buttons.js" defer type="module"></script>
+    <title>administração</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <img src="../../img/pizza_logo.png" alt="logo Buon appetito">
+            <img src="../../img/pizza_logo.png" alt="">
             <p>Buon Appetito</p>
         </div>
     </header>
     <main>
-        <img class="fatia" src="../../img/fatia_login.png" alt="">
-            <form>
-                <div class="input-titulo">
-                    <h2>Login</h2>
-                    <input class="user" type="text" id="user">
-                </div>
-                <div class="input-titulo">
-                    <h2>Senha</h2>
-                    <input class="password" type="password" name="senha" id="password">
-                </div>
-                <a class="button buttonFooter" id="formButton">Enviar</a>
-            </form>
-        <img class="pizza" src="../../img/pizza_login.png" alt="">
+        <h2>Adicionar Produto?</h2>
+        <div id="botoes" class="botoes"></div>
+        <section>
+            <div class="titulo-container">
+                <div class="linha"></div>
+                <h2 class="titulo">Pizzas e Bebidas</h2>
+                <div class="linha"></div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="infos-gerais">
@@ -49,7 +55,7 @@
                 </div>
             </div>
             <p class="copyright">
-                Copyright © 2022 | CrazyDevs
+                Copyright © 2022 | CrazyDevs                
             </p>
             <div class="redes-sociais">
                 <i class="fa-brands fa-twitter icon-infos geral"></i>

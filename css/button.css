@@ -10,8 +10,8 @@
     padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 50px;
+    justify-content: center;
+    gap: 100px;
     padding-bottom: 50px;
 
 }
@@ -41,7 +41,7 @@
 .buttonMain{
 
     font-size: 3rem;
-    width: 45%;
+    width: 25%;
     height: 300px;
 
 }
@@ -49,6 +49,7 @@
 .p-button{
 
     margin-top: 20px;
+    color: #fff;
 
 }
 

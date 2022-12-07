@@ -7,8 +7,6 @@ const login = {
 
 }
 
-console.log(window.location.href)
-
 const getLogin = (dados) => {
 
     const form = document.querySelector('form')
@@ -19,10 +17,9 @@ const getLogin = (dados) => {
 
         if (dados.nome == nome && dados.senha == senha) {
             
-            window.location.href = './src/produto.html'
+            window.location.href = './src/administracao.html'
 
         }
-
     }
 }
 

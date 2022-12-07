@@ -40,17 +40,17 @@
     </main>
     <footer>
         <form class="duvidas-container" id="form">
-            <input type="text" id="seuNome" placeholder="Seu nome">
+            <input required type="text" id="seuNome" placeholder="Seu nome">
             <div class="numbers-container">
-                <input type="number" name="telefone" id="telefone" placeholder="Telefone">
-                <input type="number" name="celular" id="celular" placeholder="Celular">
+                <input required type="number" name="telefone" id="telefone" placeholder="Telefone">
+                <input required type="number" name="celular" id="celular" placeholder="Celular">
             </div>
-            <input type="email" name="email" id="email" placeholder="Email">
+            <input required type="email" name="email" id="email" placeholder="Email">
             <select name="marcas" id="marcas">
                 <option value="sugestao">Sugestão</option>
                 <option value="critica">Crítica</option>
             </select>
-            <textarea class="message" name="message" placeholder="Mensagem" id="" cols="01" rows="0"></textarea>
+            <textarea required class="message" name="message" placeholder="Mensagem" id="" cols="01" rows="0"></textarea>
             <a class="button buttonFooter" id="formButton">Enviar</a>
         </form>
         <div class="infos-gerais">

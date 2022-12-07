@@ -188,7 +188,7 @@ const createCard = (dados) => {
         Promocao.classList.remove("promocaoOff")
 
     }
-    
+        
     infosImg.appendChild(img)
     infosImg.appendChild(infos)
     div.appendChild(infosImg)
@@ -222,8 +222,6 @@ const loadCardBebida = () => {
     container.replaceChildren(...creationCards)
 
 }
-
-
 
 loadButton()
 
