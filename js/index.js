@@ -7,22 +7,22 @@ const dadosBotoes =
     {
 
         nome: 'Pizzas',
-        imagem: 'https://firebasestorage.googleapis.com/v0/b/buon-appetito-1e30a.appspot.com/o/images%2Fpizza.png?alt=media&token=e0489ee9-c015-49c6-b7d6-a8cbfae8f057'
+        imagem: './img/pizza.png'
 
     },
     {
 
         nome: 'Bebidas',
-        imagem: 'https://firebasestorage.googleapis.com/v0/b/buon-appetito-1e30a.appspot.com/o/images%2Fbebidas.png?alt=media&token=8bc14a58-e6c5-4403-b713-f432d841690d',
+        imagem: './img/bebidas.png',
 
     },
     {
         nome: 'Favoritos',
-        imagem: 'https://firebasestorage.googleapis.com/v0/b/buon-appetito-1e30a.appspot.com/o/images%2Ffavorito.png?alt=media&token=740784dd-c6e8-4d0c-aadf-b17f23a817a0'
+        imagem: './img/favorito.png'
     },
     {
         nome: 'Serviços',
-        imagem: 'https://firebasestorage.googleapis.com/v0/b/buon-appetito-1e30a.appspot.com/o/images%2Fimg_serviços.png?alt=media&token=51edcec1-e2df-450e-b189-851b2c59a5e4'
+        imagem: './img/img_serviços.png'
     }
 ]
 
