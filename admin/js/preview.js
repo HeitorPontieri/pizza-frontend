@@ -2,8 +2,9 @@
 
 const inputFile = document.querySelector("#picture__input");
 const pictureImage = document.querySelector(".picture__image");
-const pictureImageTxt = "Choose an image";
+const pictureImageTxt = "Escolha uma imagem";
 pictureImage.innerHTML = pictureImageTxt;
+
 
 inputFile.addEventListener("change", function (e) {
   const inputTarget = e.target;
@@ -28,3 +29,10 @@ inputFile.addEventListener("change", function (e) {
     pictureImage.innerHTML = pictureImageTxt;
   }
 });
+
+export {
+
+  
+
+
+}

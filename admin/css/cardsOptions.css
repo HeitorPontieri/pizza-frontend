@@ -1,0 +1,18 @@
+.card-options{
+
+    display: flex;
+    justify-content: space-around;
+
+}
+.icon{
+
+    height: 70%;
+    cursor: pointer;
+}
+.options{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}

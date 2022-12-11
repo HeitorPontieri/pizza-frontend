@@ -19,7 +19,7 @@
 
 .card{
     height: 200px;
-    width: 35%;
+    width: 60%;
     background: #F2B077;
     display: flex;
     justify-content: space-around;
@@ -40,19 +40,24 @@ li {
 
     width: 30%;
     height: 80%;
-    margin-left: 40px;
 
 }
 .promocaoOn{
 
     display: flex;
     align-self: flex-end;
+    padding-bottom: 5px;
     height: 50%;
     transform: rotate(-15deg);
 
 }
 .promocaoOff{
 
-    display: none;
+    display: flex;
+    align-self: flex-end;
+    padding-bottom: 5px;
+    height: 50%;
+    transform: rotate(-15deg);
+    display: hidden;
 
 }

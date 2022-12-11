@@ -13,18 +13,20 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bd40ade05d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/button.css">
+    <link rel="stylesheet" href="../css/Produtos.css">
+    <link rel="stylesheet" href="../../css/cards.css">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../css/imagePreview.css">
     <script src="../js/preview.js" defer type="module"></script>
-    <title>administração</title>
+    <script src="../js/produto.js" defer type="module"></script>
+    <title>Edição de Produto</title>
 </head>
 
 <body>
@@ -35,12 +37,42 @@
         </div>
     </header>
     <main>
-
-        <label class="picture" for="picture__input" tabIndex="0">
-            <span class="picture__image">chose an image</span>
-            <input type="file" accept="image/png" name="picture__input" id="picture__input">
-        </label>
-
+        <form>
+            <div class="infos-produto">
+                <div class="infos-geraisProduto">
+                    <div class="input">
+                        <h2 class="input-text">Nome do produto</h2>
+                        <input type="text" id="produtoNome">
+                    </div>
+                    <div class="botoes-texto">
+                        <h2 class="input-text">O produto está em promoção?</h2>
+                        <div class="botoes-promocao" id="botoes-promocao">
+                            <button class="sim" id="sim">Sim</button>
+                            <button class="nao" id="nao">Não</button>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <h2 class="input-text">Preço do Produto</h2>
+                        <input type="number" id="produtoPreco">
+                    </div>
+                </div>
+                <label class="picture" for="picture__input" tabIndex="0">
+                    <span class="picture__image"></span>
+                    <input type="file" accept="image/png" name="picture__input" id="picture__input">
+                </label>
+            </div>
+            <div class="infos-especificas">
+                <div>
+                    <h2 id="caract1" class="input-text"></h2>
+                    <input id="input1" class="input" id="input1">
+                </div>
+                <div>
+                    <h2 id="caract2" class="input-text"></h2>
+                    <input id="input2" class="input" id="input2">
+                </div>
+            </div>
+            <button>Enviar</button>
+        </form>
     </main>
     <footer>
         <div class="infos-gerais">

@@ -1,3 +1,4 @@
+
 import { getStorage, ref, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-storage.js"
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
@@ -14,20 +15,19 @@ const firebaseConfig = {
   appId: "1:977327910796:web:71ad6b510a8632f75b70a9"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// // Initialize Firebase
+// const app = firebase.initializeApp(firebaseConfig);
 
+// let storage = getStorage(app);
 
-const uploadImage =  async (image, name) => {
-    const storage = getStorage(app);
-
-    const mountainsRef = ref(storage, `images/${name}.png`);
-    
-
-    await uploadBytes(mountainsRef, image)
-
-    return await getDownloadURL(mountainsRef)
+const uploadImage =  async () => {
    
+  const nomeImagem = "image1"
+
+  const upload = storage.ref().child("images").child(nomeImagem).put(file)
+
+  return upload
+
 } 
 
 export {
