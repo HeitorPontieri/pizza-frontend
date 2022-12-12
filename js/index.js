@@ -1,30 +1,7 @@
 'use strict'
 
-// import { getAllbuttons } from "./api";
+import { getAllbuttons, postForms, getAllPizzas, getAllBebidas } from "./api.js";
 
-const dadosBotoes = 
-[   
-    {
-
-        nome: 'Pizzas',
-        imagem: './img/pizza.png'
-
-    },
-    {
-
-        nome: 'Bebidas',
-        imagem: './img/bebidas.png',
-
-    },
-    {
-        nome: 'Favoritos',
-        imagem: './img/favorito.png'
-    },
-    {
-        nome: 'Serviços',
-        imagem: './img/img_serviços.png'
-    }
-]
 
 const PizzasBebidas = 
 [
@@ -69,7 +46,8 @@ const PizzasBebidas =
     }
 ]
 
-const Pizzas= 
+const Pizzas = 
+
 [
     {
 
@@ -136,15 +114,17 @@ const createButton = (dados) => {
     
     return a
 }
-const loadButton = () => {
+const loadButton = async () => {
     
-    const dados = dadosBotoes //await getAllbuttons()
+    const dados = await getAllbuttons()
+
     const container = document.getElementById('botoes')
 
     const creationCards = dados.map(createButton)
     container.replaceChildren(...creationCards)
 
 }
+
 const createSection = (dados) => {
 
     const cards = document.createElement('div')
@@ -177,15 +157,23 @@ const createSection = (dados) => {
     return section
 
 }
-const loadSection = () => {
 
-    const dados = dadosBotoes
+
+const loadSection = async () => {
+
+    const dados = await getAllbuttons()
     const container = document.getElementById('sections')
 
     const creationSection = dados.map(createSection)
     container.replaceChildren(...creationSection)
     
 }
+
+
+
+
+
+
 const createCard = (dados) => {
 
     const infosImg = document.createElement("div")
@@ -254,9 +242,9 @@ const createCard = (dados) => {
     return div
 }
 
-const loadCardPizza = () => {
+const loadCardPizza = async () => {
     
-    const dados = Pizzas
+    const dados = await getAllPizzas()
     const container = document.getElementById('container-cardsPizzas')
 
     const creationCards = dados.map(createCard)
@@ -264,9 +252,9 @@ const loadCardPizza = () => {
 
 }
 
-const loadCardBebida = () => {
+const loadCardBebida = async () => {
     
-    const dados = Bebidas
+    const dados = await getAllBebidas()
     const container = document.getElementById('container-cardsBebidas')
 
     const creationCards = dados.map(createCard)
@@ -275,41 +263,41 @@ const loadCardBebida = () => {
 }
 
 
-let favoritos = []
+// let favoritos = []
     
-for (let i = 0; i < 3; i++) {
+// for (let i = 0; i < 3; i++) {
         
     
-    const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
+//     const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
     
-        return prev.status_favorito > current.status_favorito ? prev : current; 
+//         return prev.status_favorito > current.status_favorito ? prev : current; 
     
-    });
+//     });
         
-    const index = PizzasBebidas.indexOf(maxFavorito)
+//     const index = PizzasBebidas.indexOf(maxFavorito)
         
-    if (index > -1) {
+//     if (index > -1) {
     
-        favoritos.push(maxFavorito)
-        PizzasBebidas.splice(index, 1);
+//         favoritos.push(maxFavorito)
+//         PizzasBebidas.splice(index, 1);
 
-        console.log(favoritos)
+//         console.log(favoritos)
 
-    }
+//     }
 
-}
+// }
 
-const loadCardFavoritos =  () => {
+// const loadCardFavoritos =  () => {
 
-    const dados = favoritos
-    const container = document.getElementById('container-cardsFavoritos')
+//     const dados = favoritos
+//     const container = document.getElementById('container-cardsFavoritos')
     
 
-    const creationCards = dados.map(createCard)
+//     const creationCards = dados.map(createCard)
 
-    container.replaceChildren(...creationCards)
+//     container.replaceChildren(...creationCards)
 
-}
+// }
 
 loadButton()
 
@@ -319,7 +307,7 @@ loadCardPizza()
 
 loadCardBebida()
 
-loadCardFavoritos()
+// loadCardFavoritos()
 
 
 
@@ -345,13 +333,6 @@ loadCardFavoritos()
 
 // })
 
-// console.log(window.location.href);
-
-// if (window.location.href == 'http://127.0.0.1:5500/index.html/admin') {
-    
-//     window.location.href = 'http://127.0.0.1:5500/admin/index.html'
-
-// }
 
 
 

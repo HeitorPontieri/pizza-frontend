@@ -3,7 +3,7 @@
 import { postForms } from "./api.js";
 
 
-const postForm = () => {
+const postFormulario = async () => {
     
     const FormJSON = {}
     
@@ -30,17 +30,15 @@ const postForm = () => {
         FormJSON.email = email
         FormJSON.critica = escolha
 
-    
     }
 
     return FormJSON
 
 }
 
-document.getElementById("formButton").addEventListener('click', () => {
+document.getElementById("formButton").addEventListener('click',  () => {
 
-    postForm()
-    console.log(postForms())
+    // postForms(postFormulario())
 
 })
 
