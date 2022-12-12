@@ -299,7 +299,6 @@ for (let i = 0; i < 3; i++) {
 
 }
 
-
 const loadCardFavoritos =  () => {
 
     const dados = favoritos

@@ -215,11 +215,11 @@ document.querySelector('.botoes').addEventListener('click', (event) => {
 
     if(event.target.classList.contains('buttonMain')){
 
-        localStorage.setItem('TipoProduto', event.target.id)
+        localStorage.setItem('tipoProduto', event.target.id)
 
     }if(event.target.classList.contains('p-button') || event.target.classList.contains('img-button')){
 
-        localStorage.setItem('TipoProduto', event.target.parentElement.id)
+        localStorage.setItem('tipoProduto', event.target.parentElement.id)
 
     }
 })

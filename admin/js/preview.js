@@ -18,7 +18,8 @@ inputFile.addEventListener("change", function (e) {
 
       const img = document.createElement("img");
       img.src = readerTarget.result;
-      img.classList.add("picture__img");
+      img.classList.add("picture__img")
+      img.id = ('image')
 
       pictureImage.innerHTML = "";
       pictureImage.appendChild(img);
@@ -32,7 +33,6 @@ inputFile.addEventListener("change", function (e) {
 
 export {
 
-  
 
 
 }

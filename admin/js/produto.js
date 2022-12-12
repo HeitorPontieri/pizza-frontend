@@ -34,7 +34,7 @@ const createProduto = (dados) => {
     const text1 = document.getElementById('caract1')
     const text2 = document.getElementById('caract2')
 
-    if (localStorage.getItem('TipoProduto') == 'Bebidas') {
+    if (localStorage.getItem('tipoProduto') == 'Bebidas') {
 
         text2.textContent = 'Volume (mL)'
         text1.textContent = 'Teor Alcoólico'
@@ -42,7 +42,7 @@ const createProduto = (dados) => {
         input1.type = "number"
         input2.type = "number"
 
-    } else if (localStorage.getItem('TipoProduto') == 'Pizzas') {
+    } else if (localStorage.getItem('tipoProduto') == 'Pizzas') {
 
         text2.textContent = 'Acompanhamento'
         text1.textContent = 'Ingrediente principal'
@@ -99,13 +99,26 @@ const createProduto = (dados) => {
             }
         })
 
-        document.getElementById("buttonProduto").addEventListener('click', () => {
+        document.getElementById("buttonProduto").addEventListener('click', (event) => {
+
+            event.preventDefault();
 
             if (dados.teor_alcoolico == null || dados.teor_alcoolico == undefined) {
                 
+                produtoJSON.nome = document.getElementById('produtoNome').value
+                produtoJSON.preco = document.getElementById('produtoPreco').value
+                produtoJSON.ingrediente_principal = document.getElementById('input1').value 
+                produtoJSON.acompanhamento = document.getElementById('input2').value 
+                produtoJSON.status_favorito = dados.status_favorito
+                produtoJSON.tipo_produto = dados.tipo_produto
 
             }
+
+            console.log(produtoJSON)
+
         })
+
+
     } 
 }
 
