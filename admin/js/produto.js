@@ -1,6 +1,6 @@
 'use strict'
 
-const produto ={
+const produtoP ={
 
     id: 1,
     nome: 'Calabresa',
@@ -13,17 +13,26 @@ const produto ={
     tipo_produto: 'pizza'
 
 }
+const produtoB = {
 
+    id: 3,
+    nome: 'Coca-Cola',
+    preco: '40.00',
+    imagem: '../../img/bebidasProduto.png',
+    teor_alcoolico: 50,
+    volume: 100,
+    status_promocao: 0,
+    status_favorito: 5,
+    tipo_produto: 'bebida'
+
+}
 
 const createProduto = (dados) => {
-
     
-    console.log(localStorage.getItem('TipoProduto'))
-    
-    let input1 = document.getElementById('input1')
-    let input2 = document.getElementById('input2')
-    let text1 = document.getElementById('caract1')
-    let text2 = document.getElementById('caract2')
+    const input1 = document.getElementById('input1')
+    const input2 = document.getElementById('input2')
+    const text1 = document.getElementById('caract1')
+    const text2 = document.getElementById('caract2')
 
     if (localStorage.getItem('TipoProduto') == 'Bebidas') {
 
@@ -41,11 +50,11 @@ const createProduto = (dados) => {
         input1.type = "text"
         input2.type = "text"
         
-    } else if (localStorage.getItem('TipoProduto').indexOf('update') > -1) {
+    } else if (localStorage.getItem('tipoProduto') == 'update') {
 
         const produtoJSON = {}
         
-        if (dados.tipo_produto == 'bebidas') {
+        if (dados.tipo_produto == 'bebida') {
 
             text2.textContent = 'Volume (mL)'
             text1.textContent = 'Teor Alcoólico'
@@ -55,23 +64,9 @@ const createProduto = (dados) => {
 
             document.getElementById('produtoNome').value = dados.nome
             document.getElementById('produtoPreco').value = dados.preco
-            document.getElementById('input1').value = dados.ingrediente_principal
-            document.getElementById('input2').value = dados.acompanhamento
-    
-            document.getElementById('botoes-promocao').addEventListener('click', (event) => {
-    
-                if (event.target.id == 'sim') {
+            document.getElementById('input1').value = dados.teor_alcoolico
+            document.getElementById('input2').value = dados.volume
             
-                    produto.status_favorito = 1
-                    
-                }else {
-            
-                    produto.status_favorito = 0
-                }
-            
-            })
-            
-        
         } else {
 
             text2.textContent = 'Acompanhamento'
@@ -84,25 +79,35 @@ const createProduto = (dados) => {
             document.getElementById('produtoPreco').value = dados.preco
             document.getElementById('input1').value = dados.ingrediente_principal
             document.getElementById('input2').value = dados.acompanhamento
-    
-            document.getElementById('botoes-promocao').addEventListener('click', (event) => {
-    
-                if (event.target.id == 'sim') {
-            
-                    produto.status_favorito = 1
-                    
-                }else {
-            
-                    produto.status_favorito = 0
-                }
-            
-            })
 
         }
 
+        document.getElementById('botoes-promocao').addEventListener('click', (event) => {
+            
+            if (event.target.id == 'sim') {
+        
+                produtoJSON.status_favorito = 1
+
+                event.preventDefault();
+                
+            }else {
+        
+                produtoJSON.status_favorito = 0
+
+                event.preventDefault();
+
+            }
+        })
+
+        document.getElementById("buttonProduto").addEventListener('click', () => {
+
+            if (dados.teor_alcoolico == null || dados.teor_alcoolico == undefined) {
+                
+
+            }
+        })
     } 
 }
 
-
-createProduto(produto)
+createProduto(produtoB)
         

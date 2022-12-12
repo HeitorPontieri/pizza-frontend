@@ -1,8 +1,15 @@
+main{
+
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
 .infos-produto{
 
     display: flex;
     padding-top: 58px;
-    justify-content: space-around;
+    justify-content: space-between;
 
 }
 #produtoNome{
@@ -82,14 +89,13 @@ button{
     flex-direction: column;
     gap: 50px;
     padding-top: 50px;
-    padding-left: 9%;
 
 }
 
 .infos-especificas div input{
 
     height: 40px;
-    width: 30%;
+    width: 70%;
 
 }
 .infos-especificas div{
@@ -97,5 +103,21 @@ button{
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+}
+.infos-button-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.buttonFooter{
+
+    display: flex;
+    align-self: flex-end;
+    font-size: 3rem;
+    height: 200px;
+    width: 400px;
 
 }

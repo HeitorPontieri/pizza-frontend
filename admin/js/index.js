@@ -24,7 +24,7 @@ const dadosBotoes =
     }
 ]
 
-const Pizzas= 
+const PizzasBebidas = 
 [
     {
 
@@ -48,7 +48,7 @@ const Pizzas=
 
     },
     {
-        id: 1,
+        id: 3,
         nome: 'Coca-Cola',
         preco: '40.00',
         imagem: '../../img/bebidasProduto.png',
@@ -57,7 +57,7 @@ const Pizzas=
         tipo_produto: 'bebida'
     },
     {
-        id: 2,
+        id: 4,
         nome: 'Coca-Cola',
         preco: '40.00',
         imagem: '../../img/bebidasProduto.png',
@@ -108,12 +108,12 @@ const createCard = (dados) => {
     const deletar = document.createElement('img')
     deletar.classList.add('icon')
     deletar.src = '../../img/Delete.png'
-    deletar.id = `delete${dados.id}`
+    deletar.id = `delete ${dados.id}`
     
     const update = document.createElement('img')
     update.classList.add('icon')
     update.src = '../../img/update.png'
-    update.id = `update${dados.id}`
+    update.id = `update ${dados.id}`
 
     optionsContainer.appendChild(deletar)
     optionsContainer.appendChild(update)
@@ -194,7 +194,7 @@ const createCard = (dados) => {
 
 const loadCardPizza = () => {
     
-    const dadosP = Pizzas
+    const dadosP = PizzasBebidas
 
     const cards =  document.createElement('div')
     cards.classList.add("container-cards") 
@@ -206,7 +206,6 @@ const loadCardPizza = () => {
     cards.replaceChildren(...creationCards)
 
 }
-
 
 loadButtonProdutos(dadosBotoes)
 
@@ -225,28 +224,32 @@ document.querySelector('.botoes').addEventListener('click', (event) => {
     }
 })
 
-document.querySelector('.options-container').addEventListener('click', (event) => {
+document.querySelector('.container-cards').addEventListener('click', (event) => {
 
     if(event.target.classList.contains('icon')){
-
-        localStorage.setItem('TipoProduto', event.target.id)
         
-        const tipoProduto = localStorage.getItem('TipoProduto')
+        const id = event.target.id
 
-        if (tipoProduto.indexOf('delete')) {
+        const options = id.split(' ')
+
+        console.log(options[1])
+
+        
+        if (id.indexOf('delete') == -1) {
             
+            localStorage.setItem('idProduto', options[1])
+            localStorage.setItem('tipoProduto', options[0])
             window.location.href = './produto.html'
 
-        } else  {
+        }else{
 
             if (confirm('vc quer realmente fazer isso?')) {
                 
+                //function(options)
                 console.log('ok');
                 
-            }
-            
-        }
-        
+            }   
+        } 
     }
 })
 
