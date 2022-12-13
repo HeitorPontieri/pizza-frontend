@@ -1,6 +1,6 @@
 'use strict'
 
-import { getAllbuttons, getAllPizzas, getAllBebidas } from "./api.js";
+import { getAllbuttons, getAllPizzas, getAllBebidas, getAllProdutos } from "./api.js";
 
 
 const PizzasBebidas = 
@@ -157,7 +157,7 @@ const createCard = (dados) => {
     pNome.classList.add('nome')
 
     const pPreco = document.createElement("p")
-    pPreco.textContent = dados.preco
+    pPreco.textContent = `R$${CalcPorcentagem(dados.preco, dados.porcentagem_desconto)}`
     pPreco.classList.add('preco')
 
     const img = document.createElement("img")
@@ -263,28 +263,6 @@ loadCardBebida()
 // loadCardFavoritos()
 
 
-
-// const button = document.querySelector('button')
-// const button2 = document.querySelector('#button2')
-
-// button.value = "sim"
-// button2.value = "nao"
-
-// button.addEventListener('click', function () {
-
-//     if (confirm('vc quer realmente fazer isso?')) {
-
-//         console.log(button.value)
-//     }
-
-// })
-// button2.addEventListener('click', function () {
-
-//     if (confirm('vc quer realmente fazer isso?')) {
-//         console.log(button2.value)
-//     }
-
-// })
 
 
 

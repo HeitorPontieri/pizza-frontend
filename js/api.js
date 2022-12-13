@@ -11,6 +11,50 @@ const getAllbuttons = async () =>{
     return buttons
 }
 
+const getAllServicos = async () =>{
+
+    const url = 'http://localhost:8080/v1/servicos'
+
+    const response = await fetch(url)
+
+    const servicos = response.json()
+    
+    return servicos
+}
+
+const getAllPizzas = async () =>{
+
+    const url = 'http://localhost:8080/v1/pizzas'
+
+    const response = await fetch(url)
+
+    const pizzas = response.json()
+    
+    return pizzas
+}
+
+const getAllBebidas = async () =>{
+
+    const url = 'http://localhost:8080/v1/bebidas'
+
+    const response = await fetch(url)
+
+    const bebidas = response.json()
+    
+    return bebidas
+}
+
+const getAllProdutos = async () =>{
+
+    const url = 'http://localhost:8080/v1/allprodutos'
+
+    const response = await fetch(url)
+
+    const produtos = response.json()
+    
+    return produtos
+}
+
 const postForms = async (forms) =>{
 
     const url =  'http://localhost:8080/v1/formulario'
@@ -25,30 +69,6 @@ const postForms = async (forms) =>{
 
     await fetch(url, options);
 
-
-}
-const getAllPizzas = async () =>{
-
-    const url = 'http://localhost:8080/v1/pizzas'
-
-    const response = await fetch(url)
-
-    const pizzas = response.json()
-    
-    return pizzas
-}
-const getAllBebidas = async () =>{
-
-    const url = 'http://localhost:8080/v1/bebidas'
-
-    const response = await fetch(url)
-
-    const bebidas = response.json()
-    
-    return bebidas
-
-
-
 }
 
 
@@ -57,6 +77,8 @@ export {
     getAllbuttons,
     postForms,
     getAllPizzas,
-    getAllBebidas
+    getAllBebidas,
+    getAllServicos,
+    getAllProdutos
 
 }

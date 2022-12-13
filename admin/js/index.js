@@ -1,5 +1,6 @@
 'use strict'
 
+import { CalcPorcentagem } from "../js/porcentagem.js";
 
 const dadosBotoes = 
 [   
@@ -31,8 +32,9 @@ const PizzasBebidas =
 
         id: 1,
         nome: 'Calabresa',
-        preco: '40.00',
+        preco: 40.00,
         imagem: '../../img/pizzaProduto.png',
+        porcentagem_desconto: 50,
         status_promocao: 1,
         status_favorito: 1,
         tipo_produto: 'pizza'
@@ -41,8 +43,9 @@ const PizzasBebidas =
     {
         id: 2,
         nome: 'Calabresa',
-        preco: '40.00',
+        preco: 40.00,
         imagem: '../../img/pizzaProduto.png',
+        porcentagem_desconto: 30,
         status_promocao: 1,
         status_favorito: 0,
         tipo_produto: 'pizza'
@@ -51,8 +54,9 @@ const PizzasBebidas =
     {
         id: 3,
         nome: 'Coca-Cola',
-        preco: '40.00',
+        preco: 40.00,
         imagem: '../../img/bebidasProduto.png',
+        porcentagem_desconto: 45,
         status_promocao: 0,
         status_favorito: 5,
         tipo_produto: 'bebida'
@@ -60,8 +64,9 @@ const PizzasBebidas =
     {
         id: 4,
         nome: 'Coca-Cola',
-        preco: '40.00',
+        preco: 40.00,
         imagem: '../../img/bebidasProduto.png',
+        porcentagem_desconto: 50,
         status_promocao: 0,
         status_favorito: 9,
         tipo_produto: 'bebida'
@@ -153,7 +158,7 @@ const createCard = (dados) => {
     pNome.classList.add('nome')
 
     const pPreco = document.createElement("p")
-    pPreco.textContent = `R$${dados.preco}`
+    pPreco.textContent = `R$${CalcPorcentagem(dados.preco, dados.porcentagem_desconto)}`
     pPreco.classList.add('preco')
 
     const img = document.createElement("img")

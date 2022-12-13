@@ -1,6 +1,6 @@
 'use strict'
 
-import { uploadImage } from "../../firebase/firebase.js";
+// import { uploadImage } from "../../firebase/firebase.js";
 
 const produtoP ={
 
@@ -9,6 +9,7 @@ const produtoP ={
     preco: '40.00',
     imagem: '../../img/pizzaProduto.png',
     ingrediente_principal: 'Calabresa',
+    porcentagem_desconto: 50,
     acompanhamento: "molho especial",
     status_promocao: 1,
     status_favorito: 1,
@@ -29,14 +30,16 @@ const produtoB = {
 
 }
 
+
+const inputFile = document.getElementById('picture__input')
+const image = document.getElementById('img-preview')
+
 const createProduto = (dados) => {
     
     const input1 = document.getElementById('input1')
     const input2 = document.getElementById('input2')
     const text1 = document.getElementById('caract1')
     const text2 = document.getElementById('caract2')
-
-
 
     if (localStorage.getItem('tipoProduto') == 'Bebidas') {
 
@@ -69,6 +72,13 @@ const createProduto = (dados) => {
             document.getElementById('produtoPreco').value = dados.preco
             document.getElementById('input1').value = dados.teor_alcoolico
             document.getElementById('input2').value = dados.volume
+            document.getElementById('img-preview').src = dados.imagem
+
+            if (dados.porcentagem_desconto != undefined) {
+                
+                document.getElementById('porcentagemDeDesconto').value = dados.porcentagem_desconto
+            
+            }
 
             
             
@@ -85,10 +95,17 @@ const createProduto = (dados) => {
             document.getElementById('input1').value = dados.ingrediente_principal
             document.getElementById('input2').value = dados.acompanhamento
             document.getElementById('picture__input').textContent = dados.imagem
+            document.getElementById('img-preview').src = dados.imagem
+        
+            if (dados.porcentagem_desconto != undefined) {
+                
+                document.getElementById('porcentagemDeDesconto').value = dados.porcentagem_desconto
+            
+            }
             
         }
         
-        let status_promocao
+        let status_promocao = 'nao'
         let porcentagem_desconto
         
         document.getElementById('botoes-promocao').addEventListener('click', (event) => {
@@ -137,13 +154,13 @@ const createProduto = (dados) => {
                     
                     "nome": document.getElementById('produtoNome').value,
                     "preco": document.getElementById('produtoPreco').value,
-                    "ingrediente_principal" :document.getElementById('input1').value ,
+                    "ingrediente_principal": document.getElementById('input1').value ,
                     "acompanhamento":document.getElementById('input2').value ,
                     "status_favoritos":dados.status_favorito,
                     "tipo_produto": dados.tipo_produto,
                     "porcentagem_desconto": porcentagem_desconto,
                     "status_promocao": status_promocao,
-                    // "imagem": 
+                    "imagem": document.getElementById('img-preview').src
                     
                 }
                 
@@ -159,7 +176,7 @@ const createProduto = (dados) => {
                     "tipo_produto": dados.tipo_produto,
                     "porcentagem_desconto": porcentagem_desconto,
                     "status_promocao": status_promocao,
-                    // "imagem": 
+                    "imagem": document.getElementById('img-preview').src
                     
                 }
 
@@ -173,75 +190,29 @@ const createProduto = (dados) => {
     } 
 }
 
-
 const createInput = async () => {
-
-    const div = document.createElement('div')
-    div.id = "porcentagemDesconto"
-    div.innerHTML = `
-    <h2 class="input-text">
-        Porcentagem de desconto
-    </h2>
-    <input required type="number" id="porcentagemDeDesconto">`
-
-    document.getElementById('preco').appendChild(div)
-
+    
+    document.getElementById('desconto-input').classList.remove('none')
+    
 }
+
 const exitFunction = async () => {
-
-    const div = document.getElementById('porcentagemDesconto')
     
-    div.outerHTML = ''
+    document.getElementById('desconto-input').classList.add('none')
 
 }
-const image = (e) => {
-  
-    const inputTarget = e.target;
-    const file = inputTarget.files[0];
-    
-    if (file) {
-      const reader = new FileReader();
-      
-      reader.addEventListener("load", function (e) {
-        
-        const readerTarget = e.target;
-        console.log(readerTarget)
-        
-        const img = document.createElement("img");
-        img.src = readerTarget.result;
-        img.classList.add("picture__img")
-        img.id = ('image')
-        
-        pictureImage.innerHTML = "";
-        pictureImage.appendChild(img);
-      });
-      
-      reader.readAsDataURL(file);
-      
-      uploadImage(reader.result, file.name)
-      
-    } else {
-      
-      pictureImage.innerHTML = pictureImageTxt;
-      
+
+inputFile.addEventListener('change', () => {
+
+    let reader = new FileReader()
+
+    reader.onload = () => {
+        image.src = reader.result
     }
-  
-    return readerTarget.result
-    
-  }
-  
-  inputFile.addEventListener("change", image)
-  
-  export {
-  
-    image
-  
-  }
+
+    reader.readAsDataURL(inputFile.files[0])
+
+})
 
 createProduto(produtoP)
         
-export {
-
-    produtoP
-
-}

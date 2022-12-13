@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../css/imagePreview.css">
-    <script src="../js/preview.js" defer type="module"></script>
     <script src="../js/produto.js" defer type="module"></script>
     <title>Edição de Produto</title>
 </head>
@@ -56,11 +55,16 @@
                             <h2 class="input-text">Preço atual do Produto</h2>
                             <input required type="number" id="produtoPreco">
                         </div>
+                        <div class="none" id="desconto-input">
+                            <h2 class="input-text">
+                                Porcentagem de desconto
+                            </h2>
+                            <input required type="number" id="porcentagemDeDesconto">
+                        </div>
                     </div>
                 </div>
                 <label class="picture" for="picture__input" tabIndex="0">
-                    <span class="picture__image"></span>
-                    <input type="file" accept="image/png" name="picture__input" id="picture__input">
+                    <img id="img-preview">
                 </label>
             </div>
             <div class="infos-button-container">
@@ -68,13 +72,12 @@
                     <div>
                         <h2 id="caract1" class="input-text"></h2>
                         <input required id="input1" class="input" id="input1">
-                     
                     </div>
                     <div>
                         <h2 id="caract2" class="input-text"></h2>
                         <input required id="input2" class="input" id="input2">
                     </div>
-                    <input type="file" accept="image/png" name="escolha um arquivo" id="imgs">
+                    <input type="file" accept="image/png" name="picture__input" id="picture__input">
                 </div>
                 <button class="button buttonFooter" id="buttonProduto">Cadastrar</button>
             </div>
