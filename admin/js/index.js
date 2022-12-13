@@ -1,5 +1,6 @@
 'use strict'
 
+
 const dadosBotoes = 
 [   
     {
@@ -252,6 +253,15 @@ document.querySelector('.container-cards').addEventListener('click', (event) => 
         } 
     }
 })
+
+
+const inputFile = document.querySelector("#picture__input");
+const pictureImage = document.querySelector(".picture__image");
+const pictureImageTxt = "Escolha uma imagem";
+pictureImage.innerHTML = pictureImageTxt;
+
+
+
 
 
 

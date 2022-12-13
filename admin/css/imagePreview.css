@@ -21,11 +21,6 @@
     background: #ccc;
 }
 
-.picture:focus {
-    color: #777;
-    background: #ccc;
-}
-
 .picture__img {
     max-width: 100%;
 }
@@ -33,5 +28,11 @@
 .image{
 
     height: 50%;
+
+}
+
+.botoes-promocao button{
+
+    cursor: pointer;
 
 }

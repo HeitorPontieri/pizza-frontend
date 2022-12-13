@@ -51,9 +51,11 @@
                             <button class="nao" id="nao">Não</button>
                         </div>
                     </div>
-                    <div class="input">
-                        <h2 class="input-text">Preço do Produto</h2>
-                        <input required type="number" id="produtoPreco">
+                    <div id="preco" class="input">
+                        <div>
+                            <h2 class="input-text">Preço atual do Produto</h2>
+                            <input required type="number" id="produtoPreco">
+                        </div>
                     </div>
                 </div>
                 <label class="picture" for="picture__input" tabIndex="0">
@@ -66,11 +68,13 @@
                     <div>
                         <h2 id="caract1" class="input-text"></h2>
                         <input required id="input1" class="input" id="input1">
+                     
                     </div>
                     <div>
                         <h2 id="caract2" class="input-text"></h2>
                         <input required id="input2" class="input" id="input2">
                     </div>
+                    <input type="file" accept="image/png" name="escolha um arquivo" id="imgs">
                 </div>
                 <button class="button buttonFooter" id="buttonProduto">Cadastrar</button>
             </div>

@@ -1,34 +1,35 @@
 
-import { getStorage, ref, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-storage.js"
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-storage.js"
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDvvYP9g2brFk9k2lPvehDfqHVliV3v_sU",
-  authDomain: "buon-appetito-1e30a.firebaseapp.com",
-  projectId: "buon-appetito-1e30a",
-  storageBucket: "buon-appetito-1e30a.appspot.com",
-  messagingSenderId: "977327910796",
-  appId: "1:977327910796:web:71ad6b510a8632f75b70a9"
+
+  apiKey: "AIzaSyDPH7ryO6PYHWolBOSFKRqrwMmJTiZpcPU",
+  authDomain: "buon-appetito-4ba56.firebaseapp.com",
+  projectId: "buon-appetito-4ba56",
+  storageBucket: "buon-appetito-4ba56.appspot.com",
+  messagingSenderId: "248130316470",
+  appId: "1:248130316470:web:4e6cd6070055851f865e17"
+
 };
 
 // // Initialize Firebase
-// const app = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-// let storage = getStorage(app);
+const uploadImage =  async (image, name) => {
 
-const uploadImage =  async () => {
-   
-  const nomeImagem = "image1"
+  const storage = getStorage(app);
 
-  const upload = storage.ref().child("images").child(nomeImagem).put(file)
+  const mountainsRef = ref(storage, `image/${name}`);
+  
+  await uploadBytes(mountainsRef, image)
 
-  return upload
-
+  return await getDownloadURL(mountainsRef)
+ 
 } 
+
 
 export {
 

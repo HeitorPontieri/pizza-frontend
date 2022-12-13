@@ -1,6 +1,6 @@
 'use strict'
 
-import { getAllbuttons, postForms, getAllPizzas, getAllBebidas } from "./api.js";
+import { getAllbuttons, getAllPizzas, getAllBebidas } from "./api.js";
 
 
 const PizzasBebidas = 
@@ -46,53 +46,6 @@ const PizzasBebidas =
     }
 ]
 
-const Pizzas = 
-
-[
-    {
-
-        id: 1,
-        nome: 'Calabresa',
-        preco: '40.00',
-        imagem: '../img/pizzaProduto.png',
-        status_promocao: 1,
-        status_favorito: 0,
-        tipo_produto: 'pizza'
-
-    },
-    {
-        id: 2,
-        nome: 'Calabresa',
-        preco: '40.00',
-        imagem: '../img/pizzaProduto.png',
-        status_promocao: 0,
-        status_favorito: 0,
-        tipo_produto: 'pizza'
-
-    }
-]
-
-const Bebidas = 
-[
-    {
-        id: 1,
-        nome: 'Coca-Cola',
-        preco: '40.00',
-        imagem: '../img/bebidasProduto.png',
-        status_promocao: 0,
-        status_favorito: 0,
-        tipo_produto: 'bebida'
-    },
-    {
-        id: 2,
-        nome: 'Coca-Cola',
-        preco: '40.00',
-        imagem: '../img/bebidasProduto.png',
-        status_promocao: 0,
-        status_favorito: 0,
-        tipo_produto: 'bebida'
-    }
-]
 
 const createButton = (dados) => {
     
@@ -263,41 +216,41 @@ const loadCardBebida = async () => {
 }
 
 
-// let favoritos = []
+let favoritos = []
     
-// for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 5; i++) {
         
     
-//     const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
+    const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
     
-//         return prev.status_favorito > current.status_favorito ? prev : current; 
+        return prev.status_favorito > current.status_favorito ? prev : current; 
     
-//     });
+    });
         
-//     const index = PizzasBebidas.indexOf(maxFavorito)
+    const index = PizzasBebidas.indexOf(maxFavorito)
         
-//     if (index > -1) {
+    if (index > -1) {
     
-//         favoritos.push(maxFavorito)
-//         PizzasBebidas.splice(index, 1);
+        favoritos.push(maxFavorito)
+        PizzasBebidas.splice(index, 1);
 
-//         console.log(favoritos)
+        console.log(favoritos)
 
-//     }
+    }
 
-// }
+}
 
-// const loadCardFavoritos =  () => {
+const loadCardFavoritos =  () => {
 
-//     const dados = favoritos
-//     const container = document.getElementById('container-cardsFavoritos')
+    const dados = favoritos
+    const container = document.getElementById('container-cardsFavoritos')
     
 
-//     const creationCards = dados.map(createCard)
+    const creationCards = dados.map(createCard)
 
-//     container.replaceChildren(...creationCards)
+    container.replaceChildren(...creationCards)
 
-// }
+}
 
 loadButton()
 

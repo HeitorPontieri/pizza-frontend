@@ -121,3 +121,14 @@ button{
     width: 400px;
 
 }
+
+.DescontoOff {
+
+    display: none;
+
+}
+.DescontoOn {
+
+    display: flex;
+
+}
