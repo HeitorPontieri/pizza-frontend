@@ -1,6 +1,6 @@
 'use strict'
 
-import { getPizza, getBebida, putProduto } from "../js/api.js";
+import { getPizza, getBebida, putProduto, postProduto } from "../js/api.js";
 
 const produtoP ={
 
@@ -66,6 +66,65 @@ const createProduto = (dados) => {
         }
 
     })
+
+    document.getElementById("buttonProduto").addEventListener('click', (event) => {
+            
+        let produtoJSON
+        
+        
+        event.preventDefault();
+        
+        if (dados.teor_alcoolico == null || dados.teor_alcoolico == undefined) {
+
+            if (document.getElementById('porcentagemDeDesconto') != undefined) {
+                
+                porcentagem_desconto = document.getElementById('porcentagemDeDesconto').value
+
+            } else {
+
+                porcentagem_desconto = 0
+
+            }
+
+            produtoJSON = {
+                
+                "nome": document.getElementById('produtoNome').value,
+                "preco": document.getElementById('produtoPreco').value,
+                "ingrediente_principal": document.getElementById('input1').value ,
+                "acompanhamento":document.getElementById('input2').value ,
+                "status_favoritos":dados.status_favorito,
+                "tipo_produto": dados.tipo_produto,
+                "porcentagem_desconto": porcentagem_desconto,
+                "status_promocao": status_promocao,
+                "imagem": document.getElementById('img-preview').src
+
+
+                
+            }
+            
+        }else {
+
+            produtoJSON = {
+
+                "nome": document.getElementById('produtoNome').value,
+                "preco": document.getElementById('produtoPreco').value,
+                "teor_alcoolico" :document.getElementById('input1').value ,
+                "volume":document.getElementById('input2').value ,
+                "status_favoritos":dados.status_favorito,
+                "tipo_produto": dados.tipo_produto,
+                "porcentagem_desconto": porcentagem_desconto,
+                "status_promocao": status_promocao,
+                "imagem": document.getElementById('img-preview').src
+                
+            }
+
+        }
+        
+        console.log(produtoJSON)
+        postProduto(produtoJSON)
+    
+    })
+    
     
     if (localStorage.getItem('tipoProduto') == 'Bebidas') {
 
@@ -74,6 +133,14 @@ const createProduto = (dados) => {
 
         input1.type = "number"
         input2.type = "number"
+
+        document.getElementById('produtoNome').value = dados.nome
+        document.getElementById('produtoPreco').value = dados.preco
+        document.getElementById('input1').value = dados.teor_alcoolico
+        document.getElementById('input2').value = dados.volume
+        document.getElementById('img-preview').src = dados.imagem
+
+
         
     } else if (localStorage.getItem('tipoProduto') == 'Pizzas') {
 
@@ -82,6 +149,12 @@ const createProduto = (dados) => {
 
         input1.type = "text"
         input2.type = "text"
+
+        document.getElementById('produtoNome').value = dados.nome
+        document.getElementById('produtoPreco').value = dados.preco
+        document.getElementById('input1').value = dados.teor_alcoolico
+        document.getElementById('input2').value = dados.volume
+        document.getElementById('img-preview').src = dados.imagem
         
     } else if (localStorage.getItem('tipoProduto') == 'update') {
 
@@ -130,61 +203,7 @@ const createProduto = (dados) => {
             
         }
         
-        document.getElementById("buttonProduto").addEventListener('click', (event) => {
-            
-            let produtoJSON
-            
-            
-            event.preventDefault();
-            
-            if (dados.teor_alcoolico == null || dados.teor_alcoolico == undefined) {
-
-                if (document.getElementById('porcentagemDeDesconto') != undefined) {
-                    
-                    porcentagem_desconto = document.getElementById('porcentagemDeDesconto').value
-
-                } else {
-
-                    porcentagem_desconto = 0
-
-                }
-
-                produtoJSON = {
-                    
-                    "nome": document.getElementById('produtoNome').value,
-                    "preco": document.getElementById('produtoPreco').value,
-                    "ingrediente_principal": document.getElementById('input1').value ,
-                    "acompanhamento":document.getElementById('input2').value ,
-                    "status_favoritos":dados.status_favorito,
-                    "tipo_produto": dados.tipo_produto,
-                    "porcentagem_desconto": porcentagem_desconto,
-                    "status_promocao": status_promocao,
-                    "imagem": document.getElementById('img-preview').src
-                    
-                }
-                
-            }else {
-
-                produtoJSON = {
-
-                    "nome": document.getElementById('produtoNome').value,
-                    "preco": document.getElementById('produtoPreco').value,
-                    "teor_alcoolico" :document.getElementById('input1').value ,
-                    "volume":document.getElementById('input2').value ,
-                    "status_favoritos":dados.status_favorito,
-                    "tipo_produto": dados.tipo_produto,
-                    "porcentagem_desconto": porcentagem_desconto,
-                    "status_promocao": status_promocao,
-                    "imagem": document.getElementById('img-preview').src
-                    
-                }
-
-            }
-            
-            console.log(produtoJSON)
-        
-        })
-        
+       
 
     } 
 }

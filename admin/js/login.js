@@ -7,7 +7,7 @@ const tryUser = async () => {
     const nome = document.getElementById('user').value
     const senha =  document.getElementById('password').value
 
-    if (form.reportValidity()){
+    
 
         const usuario = await getUser(nome, senha)
 
@@ -20,12 +20,11 @@ const tryUser = async () => {
             alert("login ou senha incorreto")
         }
 
-    }
 }
 
 document.getElementById("formButton").addEventListener('click', () => {
 
-    tryUser(login)
+    tryUser()
 
 
 })

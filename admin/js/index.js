@@ -97,9 +97,9 @@ const createButton = (dados) => {
     return a
 }
 
-const loadButtonProdutos = () => {
+const loadButtonProdutos = async  () => {
     
-    const dados = dadosBotoes //await getAllbuttons()
+    const dados = await getAllbuttons()
 
     const container = document.getElementById('botoes')
 
@@ -204,7 +204,7 @@ const createCard = (dados) => {
 
 const loadCards = async () => {
     
-    const dados = PizzasBebidas // await getAllProdutos()
+    const dados = await getAllProdutos()
 
     const cards =  document.createElement('div')
     cards.classList.add("container-cards") 

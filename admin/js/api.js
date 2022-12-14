@@ -91,7 +91,7 @@ const deleteProduto = async (id) => {
 
 const getUser = async (nome_usuario, senha) => {
 
-    const url = `http://localhost:8080/v1/pizzas/${nome_usuario}/${senha}`
+    const url = `http://localhost:8080/v1/colaborador/autenticacao/${nome_usuario}/${senha}`
 
     const response = await fetch(url)
 
