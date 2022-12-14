@@ -11,18 +11,14 @@ Este projeto tem como objetivo fornecer um site dinamico para uma pizzaria, tend
 <img height="30em" src="https://dashboard.snapcraft.io/site_media/appmedia/2020/04/mysql-workbench.png">
            
 
-### Link do Trello onde o projeto foi organizad 
+### Link do Trello onde o projeto foi organizado 
  <a href="https://trello.com/b/V7khdlyk/buon-appetito"> Trello</a>
-
-
-
 
 #
 
 ### Banco de Dados
 
-Modelo Lógico
-<img height="350em" width="600em" src="./img/bancoLogico.jpg" alt="">   
+<img height="350em" width="300em" src="./img/bancoLogico.jpg" alt="">   
 
 #
 
