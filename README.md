@@ -6,9 +6,9 @@ Este projeto tem como objetivo fornecer um site dinamico para uma pizzaria, tend
 
 ### Tecnologias Utilizadas
 
-<img height="30em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" /> <img height="30em" src="https://cdn.iconscout.com/icon/free/png-128/postman-3521648-2945092.png"/>
-<img height="30em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" /> <img height="30em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /> 
-<img height="30em" src="https://dashboard.snapcraft.io/site_media/appmedia/2020/04/mysql-workbench.png">
+<img height="40em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" /> <img height="40em" src="https://cdn.iconscout.com/icon/free/png-128/postman-3521648-2945092.png"/>
+<img height="40em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" /> <img height="40em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /> 
+<img height="40em" src="https://dashboard.snapcraft.io/site_media/appmedia/2020/04/mysql-workbench.png">
            
 
 ### Link do Trello onde o projeto foi organizado 
@@ -18,7 +18,7 @@ Este projeto tem como objetivo fornecer um site dinamico para uma pizzaria, tend
 
 ### Banco de Dados
 
-<img height="350em" width="300em" src="./img/bancoLogico.jpg" alt="">   
+<img height="350em" width="500em" src="./img/bancoLogico.jpg" alt="">   
 
 #
 
