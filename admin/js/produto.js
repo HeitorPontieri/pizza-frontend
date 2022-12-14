@@ -34,6 +34,9 @@ const produtoB = {
 const inputFile = document.getElementById('picture__input')
 const image = document.getElementById('img-preview')
 
+const tipoProduto = localStorage.getItem('tipoProduto')
+
+
 const createProduto = (dados) => {
     
     const input1 = document.getElementById('input1')
@@ -90,16 +93,14 @@ const createProduto = (dados) => {
                 
                 "nome": document.getElementById('produtoNome').value,
                 "preco": document.getElementById('produtoPreco').value,
-                "ingrediente_principal": document.getElementById('input1').value ,
-                "acompanhamento":document.getElementById('input2').value ,
+                "ingrediente_principal": input1.value ,
+                "acompanhamento": input2.value ,
                 "status_favoritos":dados.status_favorito,
                 "tipo_produto": dados.tipo_produto,
                 "porcentagem_desconto": porcentagem_desconto,
                 "status_promocao": status_promocao,
                 "imagem": document.getElementById('img-preview').src
 
-
-                
             }
             
         }else {
@@ -108,8 +109,8 @@ const createProduto = (dados) => {
 
                 "nome": document.getElementById('produtoNome').value,
                 "preco": document.getElementById('produtoPreco').value,
-                "teor_alcoolico" :document.getElementById('input1').value ,
-                "volume":document.getElementById('input2').value ,
+                "teor_alcoolico": input1.value ,
+                "volume": input2.value ,
                 "status_favoritos":dados.status_favorito,
                 "tipo_produto": dados.tipo_produto,
                 "porcentagem_desconto": porcentagem_desconto,
@@ -120,13 +121,16 @@ const createProduto = (dados) => {
 
         }
         
-        console.log(produtoJSON)
-        postProduto(produtoJSON)
+        if(tipoProduto == 'Bebidas' || tipoProduto == 'Pizzas'){
+            postProduto(produtoJSON)
+        }else{
+            putProduto(produtoJSON, dados.id)
+        }
     
     })
     
     
-    if (localStorage.getItem('tipoProduto') == 'Bebidas') {
+    if (tipoProduto == 'Bebidas') {
 
         text2.textContent = 'Volume (mL)'
         text1.textContent = 'Teor Alcoólico'
@@ -134,15 +138,9 @@ const createProduto = (dados) => {
         input1.type = "number"
         input2.type = "number"
 
-        document.getElementById('produtoNome').value = dados.nome
-        document.getElementById('produtoPreco').value = dados.preco
-        document.getElementById('input1').value = dados.teor_alcoolico
-        document.getElementById('input2').value = dados.volume
-        document.getElementById('img-preview').src = dados.imagem
-
 
         
-    } else if (localStorage.getItem('tipoProduto') == 'Pizzas') {
+    } else if (tipoProduto == 'Pizzas') {
 
         text2.textContent = 'Acompanhamento'
         text1.textContent = 'Ingrediente principal'
@@ -150,13 +148,8 @@ const createProduto = (dados) => {
         input1.type = "text"
         input2.type = "text"
 
-        document.getElementById('produtoNome').value = dados.nome
-        document.getElementById('produtoPreco').value = dados.preco
-        document.getElementById('input1').value = dados.teor_alcoolico
-        document.getElementById('input2').value = dados.volume
-        document.getElementById('img-preview').src = dados.imagem
         
-    } else if (localStorage.getItem('tipoProduto') == 'update') {
+    } else if (tipoProduto == 'update') {
 
 
         
@@ -202,9 +195,7 @@ const createProduto = (dados) => {
             }
             
         }
-        
-       
-
+          
     } 
 }
 
@@ -232,5 +223,16 @@ inputFile.addEventListener('change', () => {
 
 })
 
-createProduto(produtoP)
+const id = localStorage.getItem('idProduto')
+
+if (getPizza(id)) {
+    
+    createProduto(getPizza(id))
+
+}else{
+
+    createProduto(getBebida(id))
+
+}
+
         

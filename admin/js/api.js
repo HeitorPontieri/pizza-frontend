@@ -60,9 +60,9 @@ const postProduto = async (produto) => {
 
 }
 
-const putProduto = async (produto) => {
+const putProduto = async (produto, id) => {
 
-    const url = 'http://localhost:8080/v1/atualizar/produto'
+    const url = `http://localhost:8080/v1/produto/atualizar/${id}`
 
     const options = {
         method: 'PUT',
