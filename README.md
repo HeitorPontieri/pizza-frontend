@@ -24,7 +24,7 @@ Este projeto tem como objetivo fornecer um site dinamico para uma pizzaria, tend
 
 ### Back-end
 
-O back-end foi realizado utilizando o nodeJS e o primas (utilizado para linkar o Back com o Banco), e para o teste foi utilizado o App Postman
+O back-end foi realizado utilizando o nodeJS e o prisma (utilizado para linkar o Back com o Banco), e para o teste foi utilizado o App Postman
 
 1. <a href="https://github.com/HeitorPontieri/pizza-backend">Back-End</a>
 
