@@ -1,31 +1,31 @@
 'use strict'
 
-const login = {
+import { getUser } from "../js/api.js";
 
-    nome: 'abc',
-    senha: '123'
-
-}
-
-const getLogin = (dados) => {
-
-    const form = document.querySelector('form')
+const tryUser = async () => {
+    
     const nome = document.getElementById('user').value
     const senha =  document.getElementById('password').value
 
     if (form.reportValidity()){
 
-        if (dados.nome == nome && dados.senha == senha) {
-            
+        const usuario = await getUser(nome, senha)
+
+        if (usuario != null || usuario != undefined) {
+        
             window.location.href = './pages/administracao.html'
 
+        }else{
+
+            alert("login ou senha incorreto")
         }
+
     }
 }
 
 document.getElementById("formButton").addEventListener('click', () => {
 
-    getLogin(login)
-    console.log(getLogin())
+    tryUser(login)
+
 
 })

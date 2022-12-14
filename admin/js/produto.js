@@ -1,6 +1,6 @@
 'use strict'
 
-// import { uploadImage } from "../../firebase/firebase.js";
+import { getPizza, getBebida, putProduto } from "../js/api.js";
 
 const produtoP ={
 
@@ -41,6 +41,32 @@ const createProduto = (dados) => {
     const text1 = document.getElementById('caract1')
     const text2 = document.getElementById('caract2')
 
+    let status_promocao = 'nao'
+    let porcentagem_desconto
+    
+    document.getElementById('botoes-promocao').addEventListener('click', (event) => {
+
+        
+        if (event.target.id == 'sim') {
+
+            
+            status_promocao = 'sim'
+
+            createInput()
+            
+        }else {
+            
+            status_promocao = 'nao'
+            
+            porcentagem_desconto = 0
+            
+            
+            exitFunction()
+
+        }
+
+    })
+    
     if (localStorage.getItem('tipoProduto') == 'Bebidas') {
 
         text2.textContent = 'Volume (mL)'
@@ -48,7 +74,7 @@ const createProduto = (dados) => {
 
         input1.type = "number"
         input2.type = "number"
-
+        
     } else if (localStorage.getItem('tipoProduto') == 'Pizzas') {
 
         text2.textContent = 'Acompanhamento'
@@ -58,6 +84,7 @@ const createProduto = (dados) => {
         input2.type = "text"
         
     } else if (localStorage.getItem('tipoProduto') == 'update') {
+
 
         
         if (dados.tipo_produto == 'bebida') {
@@ -80,8 +107,6 @@ const createProduto = (dados) => {
             
             }
 
-            
-            
         } else {
             
             text2.textContent = 'Acompanhamento'
@@ -104,32 +129,6 @@ const createProduto = (dados) => {
             }
             
         }
-        
-        let status_promocao = 'nao'
-        let porcentagem_desconto
-        
-        document.getElementById('botoes-promocao').addEventListener('click', (event) => {
-
-            event.preventDefault();
-            
-            if (event.target.id == 'sim') {
-                
-                status_promocao = 'sim'
-
-                createInput()
-                
-                
-            }else {
-                
-                status_promocao = 'nao'
-                
-                porcentagem_desconto = 0
-                
-                
-                exitFunction()
-                
-            }
-        })
         
         document.getElementById("buttonProduto").addEventListener('click', (event) => {
             
@@ -192,13 +191,13 @@ const createProduto = (dados) => {
 
 const createInput = async () => {
     
-    document.getElementById('desconto-input').classList.remove('none')
+   return document.getElementById('desconto-input').classList.remove('none')
     
 }
 
 const exitFunction = async () => {
     
-    document.getElementById('desconto-input').classList.add('none')
+   return document.getElementById('desconto-input').classList.add('none')
 
 }
 

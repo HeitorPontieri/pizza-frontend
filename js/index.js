@@ -216,41 +216,41 @@ const loadCardBebida = async () => {
 }
 
 
-let favoritos = []
+// let favoritos = []
     
-for (let i = 0; i < 5; i++) {
+// for (let i = 0; i < 5; i++) {
         
     
-    const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
+//     const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
     
-        return prev.status_favorito > current.status_favorito ? prev : current; 
+//         return prev.status_favorito > current.status_favorito ? prev : current; 
     
-    });
+//     });
         
-    const index = PizzasBebidas.indexOf(maxFavorito)
+//     const index = PizzasBebidas.indexOf(maxFavorito)
         
-    if (index > -1) {
+//     if (index > -1) {
     
-        favoritos.push(maxFavorito)
-        PizzasBebidas.splice(index, 1);
+//         favoritos.push(maxFavorito)
+//         PizzasBebidas.splice(index, 1);
 
-        console.log(favoritos)
+//         console.log(favoritos)
 
-    }
+//     }
 
-}
+// }
 
-const loadCardFavoritos =  () => {
+// const loadCardFavoritos =  () => {
 
-    const dados = favoritos
-    const container = document.getElementById('container-cardsFavoritos')
+//     const dados = favoritos
+//     const container = document.getElementById('container-cardsFavoritos')
     
 
-    const creationCards = dados.map(createCard)
+//     const creationCards = dados.map(createCard)
 
-    container.replaceChildren(...creationCards)
+//     container.replaceChildren(...creationCards)
 
-}
+// }
 
 loadButton()
 

@@ -2,6 +2,8 @@
 
 import { CalcPorcentagem } from "../js/porcentagem.js";
 
+import { getAllbuttons, getAllProdutos } from "../js/api.js";
+
 const dadosBotoes = 
 [   
     {
@@ -95,7 +97,9 @@ const createButton = (dados) => {
     return a
 }
 
-const loadButtonProdutos = (dados) => {
+const loadButtonProdutos = () => {
+    
+    const dados = dadosBotoes //await getAllbuttons()
 
     const container = document.getElementById('botoes')
 
@@ -198,24 +202,24 @@ const createCard = (dados) => {
     return cardsOptions
 }
 
-const loadCardPizza = () => {
+const loadCards = async () => {
     
-    const dadosP = PizzasBebidas
+    const dados = PizzasBebidas // await getAllProdutos()
 
     const cards =  document.createElement('div')
     cards.classList.add("container-cards") 
     const section = document.querySelector('section')
 
-    const creationCards = dadosP.map(createCard)
+    const creationCards = dados.map(createCard)
 
     section.appendChild(cards)
     cards.replaceChildren(...creationCards)
 
 }
 
-loadButtonProdutos(dadosBotoes)
+loadButtonProdutos()
 
-loadCardPizza()
+loadCards()
 
 document.querySelector('.botoes').addEventListener('click', (event) => {
 
@@ -258,12 +262,6 @@ document.querySelector('.container-cards').addEventListener('click', (event) => 
         } 
     }
 })
-
-
-const inputFile = document.querySelector("#picture__input");
-const pictureImage = document.querySelector(".picture__image");
-const pictureImageTxt = "Escolha uma imagem";
-pictureImage.innerHTML = pictureImageTxt;
 
 
 
