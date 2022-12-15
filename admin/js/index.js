@@ -2,7 +2,7 @@
 
 import { CalcPorcentagem } from "../js/porcentagem.js";
 
-import { getAllbuttons, getAllProdutos } from "../js/api.js";
+import { getAllbuttons, getAllProdutos, deleteProduto } from "../js/api.js";
 
 const dadosBotoes = 
 [   
@@ -252,13 +252,11 @@ document.querySelector('.container-cards').addEventListener('click', (event) => 
             window.location.href = './produto.html'
 
         }else{
-
-            if (confirm('vc quer realmente fazer isso?')) {
+            if (confirm('você tem certeza que quer deletar esse produto?')) {
                 
-                //function(options)
-                console.log('ok');
+                deleteProduto(options[1])
                 
-            }   
+            }
         } 
     }
 })

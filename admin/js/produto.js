@@ -36,7 +36,6 @@ const image = document.getElementById('img-preview')
 
 const tipoProduto = localStorage.getItem('tipoProduto')
 
-
 const createProduto = (dados) => {
     
     const input1 = document.getElementById('input1')
@@ -122,9 +121,13 @@ const createProduto = (dados) => {
         }
         
         if(tipoProduto == 'Bebidas' || tipoProduto == 'Pizzas'){
+
             postProduto(produtoJSON)
+
         }else{
+
             putProduto(produtoJSON, dados.id)
+
         }
     
     })
@@ -193,9 +196,7 @@ const createProduto = (dados) => {
                 document.getElementById('porcentagemDeDesconto').value = dados.porcentagem_desconto
             
             }
-            
         }
-          
     } 
 }
 
@@ -225,7 +226,7 @@ inputFile.addEventListener('change', () => {
 
 const id = localStorage.getItem('idProduto')
 
-if (getPizza(id)) {
+if (getPizza(id) !=  undefined || getPizza(id) != null)  {
     
     createProduto(getPizza(id))
 
