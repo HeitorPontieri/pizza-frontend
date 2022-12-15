@@ -26,18 +26,18 @@ O back-end foi dividido em duas API's, uma para a página do usuario e a outra p
 O site utilizou as linguagens de marcação HTML para estruturação e CSS para estilização, porém tambëm foi utilizado O javaScript, para permitir interligar o Front-End com o Back-End, além disso, foi utilizado para deixar a pagina mais dinámica 
 
 1. A primeira pagina é a padrão utilizada pelo usuário mostrando todos os produtos e o formulario para o usuario deixar sua opinião ou critica 
-<img height="200em" width="100%" src="./img/pag1.png">   
-<img height="150em" width="100%" src="./img/pag.png">
+<img height="200em" width="50%" src="./img/pagA.png">   
+<img height="150em" width="50%" src="./img/pagB.png">
 
 2. Ao digitar admin na Url do Site o Administrador é levado para a Página de login, e o permite fazer a edição dos produtos
-<img height="200em" width="100%" src="./img/pag2.png">   
+<img height="200em" width="50%" src="./img/pagC.png">   
 
 3. Aqui o Administrador pode decidir se quer criar, deletar ou atualizar um produto
-<img height="200em" width="100%" src="./img/pag3.png">   
+<img height="200em" width="50%" src="./img/pagD.png">   
 
 4. Quando uma opção de adicionar ou atualizar produto for selecionada, o Colaborador será levado para outra Página, ela podendo aparecer já preenchida (opção de atualizar) ou totalmente vazia (opção de adicionar)
-<img height="200em" width="100%" src="./img/pag4.png">  
-<img height="200em" width="100%" src="./img/pag5.png">    
+<img height="200em" width="50%" src="./img/pagE.png">  
+<img height="200em" width="50%" src="./img/pagF.png">    
 
 
 #
