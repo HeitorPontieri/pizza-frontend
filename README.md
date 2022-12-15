@@ -18,13 +18,27 @@ Modelo lógico do banco de dados
 
 O back-end foi dividido em duas API's, uma para a página do usuario e a outra para o dashboard, no total tivemos 17 endpoints sendo 9 GET's, 2 PUT's, 1 DELETE e 5 POST's distribuidos entre produto, colaborador, formulario que foram as tabelas mais importantes
 
-1. <a href="https://github.com/HeitorPontieri/pizza-backend">Back-End</a>
 
 #
 
 ## Front-end
 
-O site utilizou as linguagens de marcação HTML para estruturação e CSS para estilização, porém tambëm foi utilizado O javaScript, para permitir interligar o Front-End com o Back-End, além disso foi utilizado para deixar a pagina mais dinámica 
+O site utilizou as linguagens de marcação HTML para estruturação e CSS para estilização, porém tambëm foi utilizado O javaScript, para permitir interligar o Front-End com o Back-End, além disso, foi utilizado para deixar a pagina mais dinámica 
+
+1. A primeira pagina é a padrão utilizada pelo usuário mostrando todos os produtos e o formulario para o usuario deixar sua opinião ou critica 
+<img height="200em" width="100%" src="./img/PAG1.png">   
+<img height="150em" width="100%" src="./img/PAG1,1.png">
+
+2. Ao digitar admin na Url do Site o Administrador é levado para a Página de login, e o permite fazer a edição dos produtos
+<img height="200em" width="100%" src="./img/PAG2.png">   
+
+3. Aqui o Administrador pode decidir se quer criar, deletar ou atualizar um produto
+<img height="200em" width="100%" src="./img/PAG3.png">   
+
+4. Quando uma opção de adicionar ou atualizar produto for selecionada, o Colaborador será levado para outra Página, ela podendo aparecer já preenchida (opção de atualizar) ou totalmente vazia (opção de adicionar)
+<img height="200em" width="100%" src="./img/PAG4.png">  
+<img height="200em" width="100%" src="./img/PAG4,1.png">    
+
 
 #
 
@@ -33,7 +47,8 @@ O site utilizou as linguagens de marcação HTML para estruturação e CSS para 
 1. <a href="https://www.figma.com/file/uTX3Cw8bLut5730zDGhfGL/pizzaria-buon-appetito?node-id=0%3A1&t=w1gHPveDjE40PFfA-3"> Figma</a>
 2. <a href="https://github.com/HeitorPontieri/pizza-frontend">Front-End</a>
 3. <a href="heitorpontieri.github.io/pizza-frontend/">Site</a>
-4. <a href="https://trello.com/b/V7khdlyk/buon-appetito"> Trello</a>
+4. <a href="https://github.com/HeitorPontieri/pizza-backend">Back-End</a>
+5. <a href="https://trello.com/b/V7khdlyk/buon-appetito"> Trello</a>
 
 #
 

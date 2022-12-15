@@ -2,33 +2,33 @@
 
 import { getPizza, getBebida, putProduto, postProduto, postIngrediente } from "../js/api.js";
 
-const produtoP ={
+// const produtoP ={
 
-    id: 1,
-    nome: 'Calabresa',
-    preco: '40.00',
-    imagem: '../../img/pizzaProduto.png',
-    ingrediente_principal: 'Calabresa',
-    porcentagem_desconto: 50,
-    acompanhamento: "molho especial",
-    status_promocao: 1,
-    status_favorito: 1,
-    tipo_produto: 'pizza'
+//     id: 1,
+//     nome: 'Calabresa',
+//     preco: '40.00',
+//     imagem: '../../img/pizzaProduto.png',
+//     ingrediente_principal: 'Calabresa',
+//     porcentagem_desconto: 50,
+//     acompanhamento: "molho especial",
+//     status_promocao: 1,
+//     status_favorito: 1,
+//     tipo_produto: 'pizza'
 
-}
-const produtoB = {
+// }
+// const produtoB = {
 
-    id: 3,
-    nome: 'Coca-Cola',
-    preco: '40.00',
-    imagem: '../../img/bebidasProduto.png',
-    teor_alcoolico: 50,
-    volume: 100,
-    status_promocao: 0,
-    status_favorito: 5,
-    tipo_produto: 'bebida'
+//     id: 3,
+//     nome: 'Coca-Cola',
+//     preco: '40.00',
+//     imagem: '../../img/bebidasProduto.png',
+//     teor_alcoolico: 50,
+//     volume: 100,
+//     status_promocao: 0,
+//     status_favorito: 5,
+//     tipo_produto: 'bebida'
 
-}
+// }
 
 
 const inputFile = document.getElementById('picture__input')

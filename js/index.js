@@ -4,6 +4,82 @@ import { getAllbuttons, getAllPizzas, getAllBebidas, getAllProdutos, getAllServi
 
 import { CalcPorcentagem } from "../admin/js/porcentagem.js";
 
+// const dadosButton = [
+    
+//     {
+//         "nome": "Pizzas",
+//         "imagem": "../img/pizza.png"
+//     },
+//     {
+
+//         "nome": "Bebidas",
+//         "imagem": "../img/bebidas.png"
+
+//     },
+//     {
+
+//         "nome": "Favoritos",
+//         "imagem": "../img/favorito.png"
+
+//     },
+//     {
+
+//         "nome": "Serviços",
+//         "imagem": "../img/img_serviços.png"
+
+//     }
+// ]
+
+// const dadosPizzas = [
+
+//     {
+
+//         id: 1,
+//         tipo_produto: "pizza",
+//         nome: "portuguesa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../img/pizza_login.png"
+
+//     },
+//     {
+
+//         id: 2,
+//         tipo_produto: "pizza",
+//         nome: "queijo",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 1,
+//         imagem: "../img/pizza.png"
+
+//     },
+//     {
+
+//         id: 3,
+//         tipo_produto: "pizza",
+//         nome: "pizza de calabresa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../img/pizzaProduto.png"
+
+//     },
+//     {
+
+//         id: 4,
+//         tipo_produto: "pizza",
+//         nome: "Calabresa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../img/fatia_login.png"
+
+//     },
+
+// ]
+
+
 const createButton = (dados) => {
     
     const p = document.createElement("p")
@@ -24,6 +100,7 @@ const createButton = (dados) => {
     
     return a
 }
+
 const loadButton = async () => {
     
     const dados = await getAllbuttons()
@@ -67,7 +144,6 @@ const createSection =  (dados) => {
     return section
 
 }
-
 
 const loadSection = async () => {
 

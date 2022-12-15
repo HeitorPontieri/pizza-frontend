@@ -4,6 +4,143 @@ import { CalcPorcentagem } from "../js/porcentagem.js";
 
 import { getAllbuttons, getAllProdutos, deleteProduto } from "../js/api.js";
 
+// const dadosButton = [
+    
+//     {
+//         "nome": "Pizzas",
+//         "imagem": "../../img/pizza.png"
+//     },
+//     {
+
+//         "nome": "Bebidas",
+//         "imagem": "../../img/bebidas.png"
+
+//     },
+// ]
+
+// const dadosProdutos = [
+//     {
+
+//         id: 1,
+//         tipo_produto: "pizza",
+//         nome: "portuguesa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../../img/pizza_login.png"
+
+//     },
+//     {
+
+//         id: 2,
+//         tipo_produto: "pizza",
+//         nome: "queijo",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 2,
+//         imagem: "../../img/pizza.png"
+
+//     },
+//     {
+
+//         id: 3,
+//         tipo_produto: "pizza",
+//         nome: "Calabresa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../../img/pizzaProduto.png"
+
+//     },
+//     {
+
+//         id: 4,
+//         tipo_produto: "pizza",
+//         nome: "Calabresa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../../img/fatia_login.png"
+
+//     },
+//     {
+
+//         id: 1,
+//         tipo_produto: "pizza",
+//         nome: "portuguesa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../../img/pizza_login.png"
+
+//     },
+//     {
+
+//         id: 2,
+//         tipo_produto: "pizza",
+//         nome: "queijo",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 1,
+//         imagem: "../../img/fatia_login.png"
+
+//     },
+//     {
+
+//         id: 3,
+//         tipo_produto: "pizza",
+//         nome: "Calabresa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../../img/pizzaProduto.png"
+
+//     },
+//     {
+
+//         id: 4,
+//         tipo_produto: "pizza",
+//         nome: "Calabresa",
+//         preco: 50.00,
+//         porcentagem_desconto: 50,
+//         status_promocao: 0,
+//         imagem: "../../img/fatia_login.png"
+
+//     },
+//     {
+
+//         id: 5,
+//         tipo_produto: "bebida",
+//         nome: "Coca-Cola",
+//         preco: 5.00,
+//         porcentagem_desconto: 10,
+//         status_promocao: 1,
+//         imagem: "../../img/bebidasProduto.png"
+
+//     },
+//     {
+
+//         id: 6,
+//         tipo_produto: "bebida",
+//         nome: "Coca-Cola",
+//         preco: 5.00,
+//         porcentagem_desconto: 10,
+//         status_promocao: 1,
+//         imagem: "../../img/bebidasProduto.png"
+
+//     },
+//     {
+
+//         id: 7,
+//         tipo_produto: "bebida",
+//         nome: "Coca-Cola",
+//         preco: 5.00,
+//         porcentagem_desconto: 10,
+//         status_promocao: 1,
+//         imagem: "../../img/bebidasProduto.png"
+
+//     }
+// ]
 
 const createButton = (dados) => {
     
@@ -165,8 +302,6 @@ document.querySelector('.botoes').addEventListener('click', (event) => {
 
     }
 })
-
-console.log(document.createElement('section'));
 
 document.querySelector('section').addEventListener('click', (event) => {
 
