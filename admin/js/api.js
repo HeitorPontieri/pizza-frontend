@@ -59,6 +59,21 @@ const postProduto = async (produto) => {
     await fetch(url, options);
 
 }
+const postIngrediente = async (ingredientes) => {
+
+    const url = 'http://localhost:8080/v1/ingrediente'
+
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(ingredientes),
+        headers: {
+            'content-type': 'application/json',
+        },
+    };
+
+    await fetch(url, options);
+
+}
 
 const putProduto = async (produto, id) => {
 
@@ -111,5 +126,6 @@ export {
     postProduto,
     deleteProduto,
     putProduto,
+    postIngrediente
     
 }

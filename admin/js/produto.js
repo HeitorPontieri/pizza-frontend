@@ -1,6 +1,6 @@
 'use strict'
 
-import { getPizza, getBebida, putProduto, postProduto } from "../js/api.js";
+import { getPizza, getBebida, putProduto, postProduto, postIngrediente } from "../js/api.js";
 
 const produtoP ={
 
@@ -69,31 +69,30 @@ const createProduto = (dados) => {
 
     })
 
+
+    if (document.getElementById('porcentagemDeDesconto') != undefined) {
+                
+        porcentagem_desconto = document.getElementById('porcentagemDeDesconto').value
+
+    } else {
+
+        porcentagem_desconto = 0
+
+    }
+
     document.getElementById("buttonProduto").addEventListener('click', (event) => {
             
         let produtoJSON
-        
         
         event.preventDefault();
         
         if (dados.teor_alcoolico == null || dados.teor_alcoolico == undefined) {
 
-            if (document.getElementById('porcentagemDeDesconto') != undefined) {
-                
-                porcentagem_desconto = document.getElementById('porcentagemDeDesconto').value
-
-            } else {
-
-                porcentagem_desconto = 0
-
-            }
 
             produtoJSON = {
                 
                 "nome": document.getElementById('produtoNome').value,
                 "preco": document.getElementById('produtoPreco').value,
-                "ingrediente_principal": input1.value ,
-                "acompanhamento": input2.value ,
                 "status_favoritos":dados.status_favorito,
                 "tipo_produto": dados.tipo_produto,
                 "porcentagem_desconto": porcentagem_desconto,
@@ -128,10 +127,20 @@ const createProduto = (dados) => {
 
             putProduto(produtoJSON, dados.id)
 
+            if (produtoJSON.teor_alcoolico == undefined || produtoJSON.teor_alcoolico == null && produtoJSON.volume == undefined || produtoJSON.volume == null) {
+                
+                const ingredientesJSON = {
+
+                    "ingrediente_principal": input1.value ,
+                    "acompanhamento": input2.value
+
+                }
+
+                postIngrediente(ingredientesJSON)
+
+            }
         }
-    
     })
-    
     
     if (tipoProduto == 'Bebidas') {
 
