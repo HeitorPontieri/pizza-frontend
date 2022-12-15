@@ -20,4 +20,8 @@ const tryUser = async () => {
     }
 }
 
-document.getElementById("formButton").addEventListener('click', tryUser())
+document.getElementById("formButton").addEventListener('click', () => {
+
+    tryUser()
+
+})

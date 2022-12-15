@@ -2,50 +2,7 @@
 
 import { getAllbuttons, getAllPizzas, getAllBebidas, getAllProdutos, getAllServicos } from "./api.js";
 
-
-const PizzasBebidas = 
-[
-    {
-
-        id: 1,
-        nome: 'Calabresa',
-        preco: '40.00',
-        imagem: '../../img/pizzaProduto.png',
-        status_promocao: 1,
-        status_favorito: 1,
-        tipo_produto: 'pizza'
-
-    },
-    {
-        id: 2,
-        nome: 'Calabresa',
-        preco: '40.00',
-        imagem: '../../img/pizzaProduto.png',
-        status_promocao: 1,
-        status_favorito: 0,
-        tipo_produto: 'pizza'
-
-    },
-    {
-        id: 1,
-        nome: 'Coca-Cola',
-        preco: '40.00',
-        imagem: '../../img/bebidasProduto.png',
-        status_promocao: 0,
-        status_favorito: 5,
-        tipo_produto: 'bebida'
-    },
-    {
-        id: 2,
-        nome: 'Coca-Cola',
-        preco: '40.00',
-        imagem: '../../img/bebidasProduto.png',
-        status_promocao: 0,
-        status_favorito: 9,
-        tipo_produto: 'bebida'
-    }
-]
-
+import { CalcPorcentagem } from "../admin/js/porcentagem.js";
 
 const createButton = (dados) => {
     
@@ -78,7 +35,7 @@ const loadButton = async () => {
 
 }
 
-const createSection = (dados) => {
+const createSection =  (dados) => {
 
     const cards = document.createElement('div')
     cards.classList.add("container-cards")
@@ -205,7 +162,7 @@ const loadCardBebida = async () => {
     const dados = await getAllBebidas()
     const container = document.getElementById('container-cardsBebidas')
 
-    const creationCards = dados.map(createCardServicos)
+    const creationCards = dados.map(createCard)
     container.replaceChildren(...creationCards)
 
 }
@@ -215,18 +172,18 @@ const loadCardBebida = async () => {
 // for (let i = 0; i < 5; i++) {
         
     
-//     const maxFavorito = PizzasBebidas.reduce((prev, current) => { 
+//     const maxFavorito = await getAllProdutos().reduce((prev, current) => { 
     
 //         return prev.status_favorito > current.status_favorito ? prev : current; 
     
 //     });
         
-//     const index = PizzasBebidas.indexOf(maxFavorito)
+//     const index = await getAllProdutos().indexOf(maxFavorito)
         
 //     if (index > -1) {
     
 //         favoritos.push(maxFavorito)
-//         PizzasBebidas.splice(index, 1);
+//         await getAllProdutos().splice(index, 1);
 
 //         console.log(favoritos)
 
@@ -245,6 +202,7 @@ const loadCardBebida = async () => {
 //     container.replaceChildren(...creationCards)
 
 // }
+
 const createCardServicos = (dados) => {
 
     const infosImg = document.createElement("div")
@@ -286,7 +244,6 @@ const createCardServicos = (dados) => {
     infosImg.appendChild(img)
     infosImg.appendChild(infos)
     div.appendChild(infosImg)
-    div.appendChild(Promocao)
     infos.appendChild(ul)
     liNome.appendChild(h3Nome)
     liNome.appendChild(pNome)
@@ -303,7 +260,7 @@ const loadCardServicos = async () => {
 
     const container = document.getElementById('container-cardsServicos')
 
-    const creationCards = dados.map(createCard)
+    const creationCards = dados.map(createCardServicos)
     container.replaceChildren(...creationCards)
 
 }

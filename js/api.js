@@ -31,6 +31,7 @@ const getAllPizzas = async () =>{
     const pizzas = response.json()
     
     return pizzas
+
 }
 
 const getAllBebidas = async () =>{
@@ -42,11 +43,12 @@ const getAllBebidas = async () =>{
     const bebidas = response.json()
     
     return bebidas
+
 }
 
 const getAllProdutos = async () =>{
 
-    const url = 'http://localhost:8080/v1/allprodutos'
+    const url = 'http://localhost:2020/v1/allprodutos'
 
     const response = await fetch(url)
 

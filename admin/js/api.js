@@ -7,6 +7,7 @@ const getAllProdutos = async () =>{
     const produtos = response.json()
     
     return produtos
+
 }
 
 const getAllbuttons = async () =>{
@@ -96,11 +97,12 @@ const deleteProduto = async (id) => {
 
     const url = `http://localhost:8080/v1/produto/apagar/${id}`
 
-    const response = await fetch(url)
+    const options = {
+        method: 'DELETE',
 
-    const deletar = response.json()
-    
-    return deletar
+    };
+
+    await fetch(url, options)
 
 }
 

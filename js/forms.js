@@ -38,7 +38,7 @@ const postFormulario = async () => {
 
 document.getElementById("formButton").addEventListener('click',  () => {
 
-    // postForms(postFormulario())
+    postForms(postFormulario())
 
 })
 

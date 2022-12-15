@@ -4,76 +4,6 @@ import { CalcPorcentagem } from "../js/porcentagem.js";
 
 import { getAllbuttons, getAllProdutos, deleteProduto } from "../js/api.js";
 
-const dadosBotoes = 
-[   
-    {
-
-        nome: 'Pizzas',
-        imagem: '../../img/pizza.png'
-
-    },
-    {
-
-        nome: 'Bebidas',
-        imagem: '../../img/bebidas.png',
-
-    },
-    {
-        nome: 'Favoritos',
-        imagem: '../../img/favorito.png'
-    },
-    {
-        nome: 'Serviços',
-        imagem: '../../img/img_serviços.png'
-    }
-]
-
-const PizzasBebidas = 
-[
-    {
-
-        id: 1,
-        nome: 'Calabresa',
-        preco: 40.00,
-        imagem: '../../img/pizzaProduto.png',
-        porcentagem_desconto: 50,
-        status_promocao: 1,
-        status_favorito: 1,
-        tipo_produto: 'pizza'
-
-    },
-    {
-        id: 2,
-        nome: 'Calabresa',
-        preco: 40.00,
-        imagem: '../../img/pizzaProduto.png',
-        porcentagem_desconto: 30,
-        status_promocao: 1,
-        status_favorito: 0,
-        tipo_produto: 'pizza'
-
-    },
-    {
-        id: 3,
-        nome: 'Coca-Cola',
-        preco: 40.00,
-        imagem: '../../img/bebidasProduto.png',
-        porcentagem_desconto: 45,
-        status_promocao: 0,
-        status_favorito: 5,
-        tipo_produto: 'bebida'
-    },
-    {
-        id: 4,
-        nome: 'Coca-Cola',
-        preco: 40.00,
-        imagem: '../../img/bebidasProduto.png',
-        porcentagem_desconto: 50,
-        status_promocao: 0,
-        status_favorito: 9,
-        tipo_produto: 'bebida'
-    }
-]
 
 const createButton = (dados) => {
     
@@ -208,6 +138,8 @@ const loadCards = async () => {
 
     const cards =  document.createElement('div')
     cards.classList.add("container-cards") 
+    cards.id = "container-cards"
+
     const section = document.querySelector('section')
 
     const creationCards = dados.map(createCard)
@@ -234,7 +166,10 @@ document.querySelector('.botoes').addEventListener('click', (event) => {
     }
 })
 
-document.querySelector('.container-cards').addEventListener('click', (event) => {
+console.log(document.createElement('section'));
+
+document.querySelector('section').addEventListener('click', (event) => {
+
 
     if(event.target.classList.contains('icon')){
         
