@@ -70,21 +70,23 @@ const createProduto = (dados) => {
     })
 
 
-    if (document.getElementById('porcentagemDeDesconto') != undefined) {
-                
-        porcentagem_desconto = document.getElementById('porcentagemDeDesconto').value
-
-    } else {
-
-        porcentagem_desconto = 0
-
-    }
 
     document.getElementById("buttonProduto").addEventListener('click', (event) => {
             
         let produtoJSON
-        
+
         event.preventDefault();
+
+
+        if (document.getElementById('porcentagemDeDesconto') != undefined) {
+                
+            porcentagem_desconto = document.getElementById('porcentagemDeDesconto').value
+
+        } else {
+
+            porcentagem_desconto = 0
+
+        }
         
         if (dados.teor_alcoolico == null || dados.teor_alcoolico == undefined) {
 
