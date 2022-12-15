@@ -7,24 +7,17 @@ const tryUser = async () => {
     const nome = document.getElementById('user').value
     const senha =  document.getElementById('password').value
 
-    
+    const usuario = await getUser(nome, senha)
 
-        const usuario = await getUser(nome, senha)
-
-        if (usuario != null || usuario != undefined) {
+    if (usuario != null || usuario != undefined) {
         
-            window.location.href = './pages/administracao.html'
+        window.location.href = './pages/administracao.html'
 
-        }else{
+    }else{
 
-            alert("login ou senha incorreto")
-        }
+        alert("login ou senha incorreto")
 
+    }
 }
 
-document.getElementById("formButton").addEventListener('click', () => {
-
-    tryUser()
-
-
-})
+document.getElementById("formButton").addEventListener('click', tryUser())
